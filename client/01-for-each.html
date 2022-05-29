@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .cbox-section{
+            margin: 20px 5px;
+            display: flex;
+            flex-direction: column;
+
+        }
+    </style>    
+    <title>Document</title>
+</head>
+<body>
+    <!-- Div para el ejemplo: -->
+    <div id="app"></div>
+
+    <!-- HTML para el reto: -->
+    <section>
+        <h3>Cursos disponibles:</h3>
+        <article class="courses">
+            Curso basico Javascript
+            <br>
+            Curso intermedio Javascript
+            <br>
+            Curso closure y scope Javascript
+            <br>
+            Curso práctico HTML y CSS
+        </article>
+        <section class="cbox-section">
+        <label class ="label1" for="cbox1"><input id="cbox1" type="checkbox">Curso basico Javascript</label>
+        <label class ="label2" for="cbox2"><input id="cbox2" type="checkbox">Curso intermedio Javascript</label>
+        <label class ="label3" for="cbox3"><input id="cbox3" type="checkbox">Curso closure y scope Javascript</label>
+        <label class ="label4" for="cbox4"><input id="cbox4" type="checkbox">Curso práctico HTML y CSS</label>
+        </section>
+    </section>
+    
+
+    
+    
+    <script>
+
+        //Ejemplo de cómo utilizar forEach
+
+        const products = [
+            {title: 'Burger', price: 121},
+            {title: 'Pizza', price: 20},
+        ];
+        const app = document.getElementById('app');
+        products.forEach(products => {
+            app.innerHTML += `<li>${products.title} - ${products.price}</li>`;
+        });
+        
+
+        //Reto: Representar una lista (array) con checkbox.
+        let index = 0;
+        let input;
+        let arrayCourses = [
+            {nombre:"Curso basico Javascript", estado: "finalizado"},
+            {nombre:"Curso intermedio Javascript", estado: "en curso"},
+            {nombre:"Curso closure y scope Javascript", estado: "en curso"},
+            {nombre:"Curso práctico HTML y CSS", estado: "finalizado"},
+        ];
+        
+               
+
+         arrayCourses.forEach(elemento=>{
+             index++;
+            if (elemento.estado === "finalizado"){
+                input = document.querySelector(`.label${index} #cbox${index}`).checked =true; 
+                // console.log("Está ",elemento.estado);
+            } else {
+                input = document.querySelector(`#cbox${index}`).checked = false;
+                // console.log("Está ",elemento.estado);
+            }
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>
