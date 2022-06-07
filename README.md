@@ -7,3 +7,10 @@
 ## CLASE 3: map().
 
 ## CLASE 4: map() Reloaded.
+
+
+
+
+
+
+## CLASE 10: reduce().
